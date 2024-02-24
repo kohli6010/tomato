@@ -1,16 +1,47 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "dist"
+    "target": "es2017",
+    "lib": ["es2017", "esnext.asynciterable"],
+    "typeRoots": ["node_modules/@types"],
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "pretty": true,
+    "sourceMap": true,
+    "declaration": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "importHelpers": true,
+    "baseUrl": "app",
+    "paths": {
+      "@/": [""],
+      "@common": ["common/*"],
+      "@controllers/": ["controllers/"],
+      "@constants/": ["constants/"],
+      "@cron/": ["cron/"],
+      "@endpoints/": ["endpoints/"],
+      "@events/": ["events/"],
+      "@middlewares/": ["middlewares/"],
+      "@models/": ["models/"],
+      "@routes/": ["routes/"],
+      "@services/": ["services/"],
+      "@utility/": ["utility/"],
+      "@daos/": ["daos/"],
+      "@dtos/": ["dtos/"],
+      "@exceptions/": ["exceptions/"],
+      "@logging/": ["logging/"],
+      "@interfaces/" : ["interfaces/"]
+    }
   },
-  "experimentalDecorators": true,
-  "emitDecoratorMetadata": true,
-  "strictPropertyInitialization": false, // this one is for preventing the typescript 
-  //errors while using @Inject()
-  "include": [
-    "src"
-  ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
