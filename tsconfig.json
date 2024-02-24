@@ -3,6 +3,14 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true,
+  "strictPropertyInitialization": false, // this one is for preventing the typescript 
+  //errors while using @Inject()
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
