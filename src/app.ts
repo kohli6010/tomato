@@ -3,7 +3,6 @@ import cors from 'cors';
 import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser';
 import {AppDataSource} from './data-source';
-import { HelloWorldRoutes } from './routes/helloworldRoutes';
 
 export const app = express();
 const corsOptions = {
@@ -24,6 +23,3 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get("/", (req, res) => {
     res.send("Hello World, after a long time.")
 })
-
-
-app.use("/", new HelloWorldRoutes().router);

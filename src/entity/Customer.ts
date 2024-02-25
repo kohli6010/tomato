@@ -1,11 +1,11 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn, } from "typeorm";
 
 @Entity()
-export class Customer {
+export class Customer{
     @PrimaryGeneratedColumn("increment")
     id: number;
 
-    @Column()
+    @Column({nullable: true})
     fname: string;
 
     @Column({nullable: true})
@@ -16,9 +16,6 @@ export class Customer {
 
     @Column({nullable: true})
     email?: string;
-
-    @Column({type: "text"})
-    password: string
 
     @Column({nullable: true})
     profilePhoto?: string;
